@@ -16,13 +16,17 @@ class Solution {
             }
             numberFrequencies[num] = newFreq;
         }
-        List<Integer>[] numbersByFrequency = new List[highestFrequency + 1];
+        List<List<Integer>> numbersByFrequency = new ArrayList<>(highestFrequency + 1);
+        for (int i = 0; i < highestFrequency + 1; i++) {
+            numbersByFrequency.add(null);
+        }
+
         for (int number = 0; number < numberFrequencies.length; number++) {
             int frequency = numberFrequencies[number];
-            List<Integer> numbersWithSameFreq = numbersByFrequency[frequency];
+            List<Integer> numbersWithSameFreq = numbersByFrequency.get(frequency);
             if (numbersWithSameFreq == null) {
                 numbersWithSameFreq = new ArrayList<>();
-                numbersByFrequency[frequency] = numbersWithSameFreq;
+                numbersByFrequency.set(frequency, numbersWithSameFreq);
             }
             numbersWithSameFreq.add(number);
         }
@@ -30,7 +34,7 @@ class Solution {
         for (int i = 1 ; i <= highestFrequency ; i++) {
             List<Integer> row = new ArrayList<>();
             for (int j = i ; j <= highestFrequency ; j++) {
-                List<Integer> numbersWithFreq = numbersByFrequency[j];
+                List<Integer> numbersWithFreq = numbersByFrequency.get(j);
                 if (numbersWithFreq != null) {
                     row.addAll(numbersWithFreq);
                 }
