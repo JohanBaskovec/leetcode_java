@@ -34,9 +34,6 @@ public class Solution {
             stringCharsIndex++;
             wordStart = stringCharsIndex;
         }
-        if (patternCharIndex != patternChars.length || (stringCharsIndex - 1) != stringChars.length) {
-            return false;
-        }
-        return true;
+        return patternCharIndex == patternChars.length && (stringCharsIndex - 1) == stringChars.length;
     }
 }

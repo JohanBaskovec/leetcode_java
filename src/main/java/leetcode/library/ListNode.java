@@ -16,14 +16,6 @@ public class ListNode {
         this.next = next;
     }
 
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
-    }
-
     public static ListNode fromStringReprensentation(String stringRepresentation) {
         Integer[] values = valuesFromStringRepresentation(stringRepresentation);
         if (values.length == 0) {

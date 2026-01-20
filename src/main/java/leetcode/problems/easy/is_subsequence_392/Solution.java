@@ -14,9 +14,6 @@ public class Solution {
                 j++;
             }
         }
-        if (i >= charS.length) {
-            return true;
-        }
-        return false;
+        return i >= charS.length;
     }
 }

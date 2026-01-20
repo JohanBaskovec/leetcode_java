@@ -1,42 +1,6 @@
 package leetcode.problems.easy.buddy_strings_859;
 
 class Solution {
-    /*
-        public boolean buddyStrings(String s, String goal) {
-            if (s.length() != goal.length()) {
-                return false;
-            }
-            char[] stringChars = s.toCharArray();
-            char[] goalChars = goal.toCharArray();
-            int[] iDifferences = new int[2];
-            int nDifferences = 0;
-            for (int i = 0; i < s.length(); i++) {
-                char charString = s.charAt(i);
-                char charGoal = goal.charAt(i);
-                if (charString != charGoal) {
-                    if (nDifferences == 2) {
-                        return false;
-                    }
-                    iDifferences[nDifferences] = i;
-                    nDifferences++;
-                }
-            }
-            if (nDifferences == 1) {
-                return false;
-            } else if (nDifferences == 0){
-                int[] nChars = new int[255];
-                for (int i = 0 ; i < s.length() ; i++) {
-                    if (nChars[s.charAt(i)] == 1) {
-                        return true;
-                    }
-                    nChars[s.charAt(i)]++;
-                }
-            } else {
-                return s.charAt(iDifferences[0]) == goal.charAt(iDifferences[1]) && s.charAt(iDifferences[1]) == goal.charAt(iDifferences[0]);
-            }
-            return false;
-        }
-    */
     public boolean buddyStrings(String s, String goal) {
         if (s.length() != goal.length()) {
             return false;

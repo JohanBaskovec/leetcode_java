@@ -59,6 +59,6 @@ public class Generator {
         }
 
         stringBuilder.append("}");
-        System.out.println(stringBuilder.toString());
+        System.out.println(stringBuilder);
     }
 }
